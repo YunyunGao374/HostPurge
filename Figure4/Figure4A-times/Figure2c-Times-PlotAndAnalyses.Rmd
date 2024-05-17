@@ -1,0 +1,185 @@
+---
+title: "Benchmarking metagenomics tools for purging host contamination"
+author: "Yunyun Gao, Hao Luo, Yong-Xin Liu, et al."
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    df_print: paged
+    theme: cerulean
+    highlight: haddock
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+    code_fold: show
+  word_document:
+    toc: yes
+    toc_depth: '3'
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse  =  T, echo = T, comment = "#>", message = F, warning = F,
+	fig.align  =  "center", fig.width  =  5, fig.height = 3, dpi = 150)
+```
+
+If you use this script, please cited 如果你使用本代码，请引用：
+
+ Yunyun Gao, Hao Luo, Yong-Xin Liu,et al, Benchmarking metagenomics tools for purging host contamination. 
+
+# Plot
+
+![image](Figure2c-Times.jpeg)
+
+Example-Figure2c-Times
+
+
+# Create a sample data frame
+```{r}
+data <- read.table("data.txt", header=TRUE)
+```
+
+# R Package Loading
+```{r install, echo = TRUE}
+library(ggplot2)
+library(dplyr)
+library(dunn.test)
+library(car)
+```
+
+# Reorder the factor levels for the Software column
+```{r readdata}
+data$Software <- factor(data$Software, levels = c("Kneaddata", "Kraken2", "HostPurge"))
+data$Group <- factor(data$Group, levels = c("10G", "30G", "60G"))
+data$GenomeProportion <- factor(data$GenomeProportion, levels = c("90%", "50%", "10%"))
+```
+
+# Create the barplot
+
+```{r}
+ggplot(data, aes(x = Software, y = Time, color = Group, shape = GenomeProportion)) +
+  geom_point(size = 8) +
+  geom_point(data = data %>% group_by(Software) %>% summarize(Time = mean(Time)),
+             aes(shape = "mean"), color = "red", shape = "*", size = 25, show.legend = FALSE) +
+  labs(x = "Software", y = "Minutes", title = "Time") +
+  theme_minimal() + theme_classic() + theme(
+    panel.background = element_rect(fill="white", color="white", size=0.25),
+    axis.line = element_line(color="black", size=1),
+    axis.title = element_text(size=28, color="black"),
+    axis.text = element_text(size=28, color="black"),
+    legend.position = c(0.95, 0.7),
+    legend.text = element_text(size = 28),
+    legend.title = element_text(size=28, color="black"),
+    aspect.ratio = 1,  # set figure size to 8x6 inches
+    plot.title = element_text(size = 28, face = "bold", hjust = 0.5, vjust = 0.5)
+  ) + scale_color_manual(values = c("#998ec3", "#ff8c3e", "#1e8b9b"))  # Set the colors for different groups
+
+```
+
+# 1) Check Time of Software, Normality test
+```{r}
+shapiro_test <- by(data$Time, data$Software, shapiro.test)
+p_values <- sapply(shapiro_test, function(x) x$p.value)
+normal_data <- p_values > 0.05
+
+if (all(normal_data)) {
+  summary_stats <- aggregate(Time ~ Software, data = data, FUN = function(x) c(mean = mean(x), se = sd(x)/sqrt(length(x))))
+  print(summary_stats)
+} else {
+  summary_stats <- aggregate(Time ~ Software, data = data, FUN = function(x) c(median = median(x), p25 = quantile(x, 0.25), p75 = quantile(x, 0.75)))
+  print(summary_stats)
+}
+
+levene_test_result <- leveneTest(Time ~ Software, data = data)
+p_value_levene <- levene_test_result$`Pr(>F)`[1]
+
+if (all(normal_data)) {
+  anova_result <- aov(Time ~ Software, data = data)
+  print(summary(anova_result))
+} else {
+  kruskal_result <- kruskal.test(Time ~ Software, data = data)
+  print(kruskal_result)
+  if (kruskal_result$p.value < 0.05) {
+    # Perform post-hoc pairwise comparisons
+    posthoc_result <- dunn.test(data$Time, data$Software, method = "bonferroni")
+    print(posthoc_result)
+  } else {
+    print("Kruskal-Wallis test is not significant. No post-hoc test needed.")
+  }
+}
+```
+# 2) Check Time of Datasize, Normality test
+```{r}
+shapiro_test <- by(data$Time, data$Group, shapiro.test)
+p_values <- sapply(shapiro_test, function(x) x$p.value)
+normal_data <- p_values > 0.05
+
+if (all(normal_data)) {
+  summary_stats <- aggregate(Time ~ Group, data = data, FUN = function(x) c(mean = mean(x), se = sd(x)/sqrt(length(x))))
+  print(summary_stats)
+} else {
+  summary_stats <- aggregate(Time ~ Group, data = data, FUN = function(x) c(median = median(x), p25 = quantile(x, 0.25), p75 = quantile(x, 0.75)))
+  print(summary_stats)
+}
+
+levene_test_result <- leveneTest(Time ~ Group, data = data)
+p_value_levene <- levene_test_result$`Pr(>F)`[1]
+
+
+if (all(normal_data)) {
+  anova_result <- aov(Time ~ Group, data = data)
+  print(summary(anova_result))
+} else {
+  kruskal_result <- kruskal.test(Time ~ Group, data = data)
+  print(kruskal_result)
+  if (kruskal_result$p.value < 0.05) {
+    # Perform post-hoc pairwise comparisons
+    posthoc_result <- dunn.test(data$Time, data$Group, method = "bonferroni")
+    print(posthoc_result)
+  } else {
+    print("Kruskal-Wallis test is not significant. No post-hoc test needed.")
+  }
+}
+```
+# 3) Check Time of HostGenomeProportion, Normality test
+```{r}
+shapiro_test <- by(data$Time, data$GenomeProportion, shapiro.test)
+p_values <- sapply(shapiro_test, function(x) x$p.value)
+normal_data <- p_values > 0.05
+
+if (all(normal_data)) {
+  summary_stats <- aggregate(Time ~ GenomeProportion, data = data, FUN = function(x) c(mean = mean(x), se = sd(x)/sqrt(length(x))))
+  print(summary_stats)
+} else {
+  summary_stats <- aggregate(Time ~ GenomeProportion, data = data, FUN = function(x) c(median = median(x), p25 = quantile(x, 0.25), p75 = quantile(x, 0.75)))
+  print(summary_stats)
+}
+
+levene_test_result <- leveneTest(Time ~ GenomeProportion, data = data)
+p_value_levene <- levene_test_result$`Pr(>F)`[1]
+
+if (all(normal_data)) {
+  anova_result <- aov(Time ~ GenomeProportion, data = data)
+  print(summary(anova_result))
+} else {
+  kruskal_result <- kruskal.test(Time ~ GenomeProportion, data = data)
+  print(kruskal_result)
+  if (kruskal_result$p.value < 0.05) {
+    # Perform post-hoc pairwise comparisons
+    posthoc_result <- dunn.test(data$Time, data$GenomeProportion, method = "bonferroni")
+    print(posthoc_result)
+  } else {
+    print("Kruskal-Wallis test is not significant. No post-hoc test needed.")
+  }
+}
+```
+
+If you use this script, please cited 如果你使用本代码，请引用：
+
+ Yunyun Gao, Hao Luo, Yong-Xin Liu,et al, Benchmarking metagenomics tools for purging host contamination. 
+
+Copyright 2016-2023 Yunyun Gao(高云云), Yong-Xin Liu(刘永鑫) <liuyongxin@caas.cn>, Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences

@@ -1,0 +1,16 @@
+taxa	Species	Domain	Kingdom	Phylum	Class	Order	Family	Dataset1	BWA	Bowtie2	Kneaddata	KMCP	Kraken2	KrakenUniq
+Oryza_sativa	Oryza_sativa	Eukaryota	Viridiplantae	Streptophyta	Magnoliopsida	Poales	Poaceae	0	0.022222222	358.5133333	0.022222222	736598.9	33309.78222	3.906666667
+Bacillus_cereus	Bacillus_cereus	Bacteria	Bacteria	Bacillota	Bacilli	Bacillales	Bacillaceae	5343.986667	5258.115556	5342.877778	5310.111111	5345.884444	5332.091111	5328.915556
+Lactobacillus_plantarum	Lactobacillus_plantarum	Bacteria	Bacteria	Bacillota	Bacilli	Lactobacillales	Lactobacillaceae	1048.153333	1041.662222	1047.92	1044.891111	1049.891111	1047.106667	1046.651111
+Clostridium_acetobutylicum	Clostridium_acetobutylicum	Bacteria	Bacteria	Bacillota	Clostridia	Eubacteriales	Clostridiaceae	9510.48	9328.728889	9509.786667	9455.311111	9512.284444	9497.691111	9490.06
+Methylobacterium_extorquens	Methylobacterium_extorquens	Bacteria	Bacteria	Pseudomonadota	Alphaproteobacteria	Hyphomicrobiales	Methylobacteriaceae	21390.73556	21150.30667	21389.14889	21330.42222	21392.6	21372.29111	21363.96667
+Enterobacter_cloacae	Enterobacter_cloacae	Bacteria	Bacteria	Pseudomonadota	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	12524.47333	12453.85778	12524.47111	12487.08	12526.18444	12512.61556	12509.44889
+Escherichia_coli	Escherichia_coli	Bacteria	Bacteria	Pseudomonadota	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	10715.06444	10642.85778	10715.02444	10688.36222	10716.85111	10707.04444	10703.88889
+Salmonella_enterica	Salmonella_enterica	Bacteria	Bacteria	Pseudomonadota	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	3551.78	3526.406667	3551.751111	3541.16	3552.282222	3548.333333	3546.92
+Pseudomonas_fluorescens	Pseudomonas_fluorescens	Bacteria	Bacteria	Pseudomonadota	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	19921.24222	19792.23556	19921.2	19881.68667	19923.18667	19907.62	19904.61111
+Pseudomonas_aeruginosa	Pseudomonas_aeruginosa	Bacteria	Bacteria	Pseudomonadota	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	9735.242222	9631.566667	9735.3	9715.606667	9736.991111	9730.746667	9727.368889
+Staphylococcus_aureus	Staphylococcus_aureus	Bacteria	Bacteria	Bacillota	Bacilli	Bacillales	Staphylococcaceae	18780.46667	1403.768889	1424.955556	1419.231111	1427.042222	1423.448889	1423.171111
+Xanthomonas_oryzae	Xanthomonas_oryzae	Bacteria	Bacteria	Pseudomonadota	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	36853.68	53772.88889	54208.58	54130.55333	54210.58889	54191.94	54173.64667
+Burkholderia_glumae	Burkholderia_glumae	Bacteria	Bacteria	Pseudomonadota	Betaproteobacteria	Burkholderiales	Burkholderiaceae	61692.47778	60724.05111	61690.74667	61541.90444	61694.48222	61661.86444	61633.69333
+Pyricularia_grisea	Pyricularia_grisea	Eukaryota	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Pyriculariaceae	28337.22444	27757.36889	28336.62889	27976.67111	28337.38667	28336.13111	28071.94222
+Fusarium_graminearum	Fusarium_graminearum	Eukaryota	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	85031.99333	84544.81778	85016.73556	84849.87556	85032.82444	84994.82889	84933.10222
