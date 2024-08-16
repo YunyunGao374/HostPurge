@@ -16,33 +16,33 @@ The paper contains the following figures, and these scripts contain codes of all
 
 **Graphical abstract | Benchmarking metagenomics tools for removing host contamination.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure1-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure1.jpg "image")
 
 **Fig. 1 | Host contamination consumed extra computing resources and affected the accuracy of the results in metagenomic analysis.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure2-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure2.jpg "image")
 **Fig. 2 | Benchmarking calculates resources of six host removal software on simulated human and rice metagenomic data.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure3%20-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure3.jpg "image")
 **Fig. 3 | Assessing the accuracy of host contamination removal across various software.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure4%20-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure4.jpg "image")
 
 **Fig. 4 | Impact of lacking a host reference genome on the performance of host decontamination tools.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS1-Metadata.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS1.jpg "image")
 **Fig. S1 | Literature search for existing studies addressing host contamination**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS2-MemoryUsage.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS2.jpg "image")
 **Fig. S2 | Comparison of host removal performance on the accuracy of the results in metagenomic analysis.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS3-Time%20consumption.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS3.jpg "image")
 **Fig. S3 |  Memory usage during the host removing process of BWA, Bowtie2, KneadData, KMCP, Kraken2, KrakenUniq in simulation rice and human metagenome. SinBac, Single Bacteria; SynCom, Synthetic Community.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS4-radar-summary.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS4.jpg "image")
 **Fig. S4 | Time consumption during the host removing process of BWA, Bowtie2, KneadData, KMCP, Kraken2, KrakenUniq. SinBac, Single bacterium; SynCom, Synthetic community.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS5-recall%2C%20precision%2C%20f1.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS5.jpg "image")
 **Fig. S5 | Comparative analysis of composition, computational efficiency and host contamination removal performance across six software. **
 
 ![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS6.jpg "image")
