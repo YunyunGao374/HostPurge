@@ -1,0 +1,78 @@
+---
+title: "Benchmarking metagenomics tools for purging host contamination"
+author: "Yunyun Gao, Hao Luo, Yong-Xin Liu, et al."
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    df_print: paged
+    theme: cerulean
+    highlight: haddock
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+    code_fold: show
+  word_document:
+    toc: yes
+    toc_depth: '3'
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse  =  T, echo = T, comment = "#>", message = F, warning = F,
+	fig.align  =  "center", fig.width  =  5, fig.height = 3, dpi = 150)
+```
+
+If you use this script, please cited 如果你使用本代码，请引用：
+
+Yunyun Gao, Hao Luo, Hujie Lyu, Haifei Yang, Salsabeel Yousuf, Shi Huang, Yong-Xin Liu, Benchmarking metagenomics tools for removing host contamination. 
+
+# Barplot
+
+![image](Figure4b-KneadData.jpg)
+
+
+# Read your data
+
+```{r}
+library(ggplot2)
+library(car)
+library(dunn.test)
+library(tidyr)
+data <- read.table("data.txt", header = TRUE)
+data2 <- subset(data, Software == "KneadData")
+data2 <- data2[, c("Hosttype", "Accuracy", "Precision", "Recall", "F1")]
+data_long <- tidyr::pivot_longer(data2, -Hosttype)
+data_long$Hosttype <- factor(data_long$Hosttype, levels = c("Refer", "OsjSinBac", "OsiSinBac", "OrSinBac"))
+data_long$name <- factor(data_long$name, levels = c("Accuracy", "Precision", "Recall", "F1"))
+ggplot(data_long, aes(x = name, y = value, fill = Hosttype)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +  # Adjust the width of dodging
+  labs(x = "Software", y = "KneadData", fill = "Hosttype") +
+  coord_cartesian(ylim = c(0.9, 1.1)) +  # Fix the y-axis limits
+  scale_x_discrete(expand = c(0.2, 0)) +  # Adjust the distance from the y-axis
+  theme_minimal() +
+  theme_classic() +
+  theme(
+    panel.background = element_rect(fill = "white", color = "white", size = 0.25),
+    axis.line = element_line(color = "black", size = 1),
+    axis.title = element_text(size = 28, color = "black"),
+    axis.text = element_text(size = 28, color = "black"),
+    legend.position = c(1.3, 0.5),
+    legend.text = element_text(size = 28),
+    legend.title = element_text(size = 28, color = "black"),
+    plot.title = element_text(size = 28, face = "bold", hjust = 0.5, vjust = 0.5),
+    aspect.ratio = 0.7  # Set figure aspect ratio
+  ) +
+  scale_fill_manual(values = c("Refer" = "#fb8072", "OsjSinBac" = "#bebada", "OsiSinBac" = "#ffffb3", "OrSinBac" = "#8dd3c7"))
+
+```
+
+If you use this script, please cited 如果你使用本代码，请引用：
+
+Yunyun Gao, Hao Luo, Hujie Lyu, Haifei Yang, Salsabeel Yousuf, Shi Huang, Yong-Xin Liu, Benchmarking metagenomics tools for removing host contamination. 
+
+Copyright 2016-2023 Yunyun Gao(高云云), Yong-Xin Liu(刘永鑫) <liuyongxin@caas.cn>, Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences

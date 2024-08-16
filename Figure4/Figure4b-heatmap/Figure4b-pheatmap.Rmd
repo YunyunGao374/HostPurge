@@ -1,0 +1,58 @@
+---
+title: "Benchmarking metagenomics tools for purging host contamination"
+author: "Yunyun Gao, Hao Luo, Yong-Xin Liu, et al."
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    df_print: paged
+    theme: cerulean
+    highlight: haddock
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+    code_fold: show
+  word_document:
+    toc: yes
+    toc_depth: '3'
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse  =  T, echo = T, comment = "#>", message = F, warning = F,
+	fig.align  =  "center", fig.width  =  5, fig.height = 3, dpi = 150)
+```
+
+If you use this script, please cited 如果你使用本代码，请引用：
+
+Yunyun Gao, Hao Luo, Hujie Lyu, Haifei Yang, Salsabeel Yousuf, Shi Huang, Yong-Xin Liu, Benchmarking metagenomics tools for removing host contamination. 
+
+# Barplot
+
+![image](Figure4a-pheatmap.png)
+
+
+# Read your data
+
+```{r}
+library(xlsx)
+library(pheatmap)
+df1 <- read.xlsx("output.xlsx", sheetName = "Sheet1", row.names = 1)
+pheatmap(df1,
+         fontsize = 10,#字体大小
+         # fontface="italic",#斜体,其中'font'和'fontface'两个量只能设定一个
+         fontfamily= "Calibri",#字体类型
+         border=FALSE,#边框
+         color = colorRampPalette(c( "#7272FF","#AAE4E4", "#FCE4E4"))(50),#字体颜色
+         filename ="pheatmap1.png" )#导出为图片
+```
+
+If you use this script, please cited 如果你使用本代码，请引用：
+
+Yunyun Gao, Hao Luo, Hujie Lyu, Haifei Yang, Salsabeel Yousuf, Shi Huang, Yong-Xin Liu, Benchmarking metagenomics tools for removing host contamination. 
+
+Copyright 2016-2023 Yunyun Gao(高云云), Yong-Xin Liu(刘永鑫) <liuyongxin@caas.cn>, Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences
