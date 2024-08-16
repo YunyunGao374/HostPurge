@@ -14,7 +14,7 @@ The paper contains the following figures, and these scripts contain codes of all
 
 ![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/GA.jpg "image")
 
-**Graphical abstract | Benchmarking metagenomics tools for removing host contamination. **
+**Graphical abstract | Benchmarking metagenomics tools for removing host contamination.**
 
 ![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure1-F.jpg "image")
 
