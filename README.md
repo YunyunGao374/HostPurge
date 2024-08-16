@@ -12,7 +12,7 @@ The rapid evolution of metagenomic sequencing technology offers remarkable oppor
 
 The paper contains the following figures, and these scripts contain codes of all statistics and plotting figures.
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure-GA-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/GA.jpg "image")
 
 **Graphical abstract | Benchmarking metagenomics tools for removing host contamination. **
 
