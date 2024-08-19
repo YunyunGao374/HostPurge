@@ -1,0 +1,14 @@
+Name	Completeness	Contamination	Completeness_Model_Used	Translation_Table_Used	Coding_Density	Contig_N50	Average_Gene_Length	Genome_Size	GC_Content	Total_Coding_Sequences	Additional_Notes
+bin.1	86.15	3.72	Neural Network (Specific Model)	11	0.861	7452	266.59117345193295	2710566	0.56	2923	None
+bin.10	64.48	0.17	Gradient Boost (General Model)	11	0.881	145291	294.81527669524553	1285903	0.33	1283	None
+bin.11	87.5	3.52	Neural Network (Specific Model)	11	0.878	18454	328.84902682798526	2131723	0.56	1901	None
+bin.12	65.66	2.17	Neural Network (Specific Model)	11	0.882	4132	260.45707745135445	2317750	0.66	2621	None
+bin.13	55.28	5.61	Neural Network (Specific Model)	11	0.915	2261	238.6776699029126	2814423	0.47	3605	None
+bin.2	97.99	0.29	Neural Network (Specific Model)	11	0.894	71874	332.26202052944353	2061737	0.57	1851	None
+bin.3	58.7	1.73	Neural Network (Specific Model)	11	0.886	2802	230.26935804103243	2352087	0.46	3022	None
+bin.4	85.93	1.25	Neural Network (Specific Model)	11	0.873	6498	272.0571555161719	2106076	0.59	2257	None
+bin.5	71.71	1.01	Neural Network (Specific Model)	11	0.89	4162	268.91174270755425	2419607	0.59	2674	None
+bin.6	65.05	6.09	Neural Network (Specific Model)	11	0.883	2639	236.5109906654622	2662785	0.44	3321	None
+bin.7	93.25	3.27	Neural Network (Specific Model)	11	0.883	12566	312.2275398824517	2522021	0.56	2382	None
+bin.8	77.74	3.05	Neural Network (Specific Model)	11	0.891	4912	261.7679195804196	2012915	0.43	2288	None
+bin.9	71.17	5.33	Neural Network (Specific Model)	11	0.862	7196	276.5775933609959	2316411	0.6	2410	None
