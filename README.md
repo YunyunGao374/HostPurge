@@ -53,7 +53,7 @@ The paper contains the following figures, and these scripts contain codes of all
 All the figure code can be found in the corresponding folder
 
 ## Pipelines
-There are three pipelines, 0HostDecontaminationImpactiononDownstreamAnalysis, 1HostDecontaminationSoftwareComparison and 2HostPurgePipeline.
+There are two pipelines, 0HostDecontaminationImpactiononDownstreamAnalysis and 1HostDecontaminationSoftwareComparison.
 
 ## Contact
 
