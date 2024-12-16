@@ -23,10 +23,10 @@ The paper contains the following figures, and these scripts contain codes of all
 ![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure2.jpg "image")
 **Fig. 2 | Benchmarking calculates resources of six host removal software on simulated human and rice metagenomic data.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure3%20.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure3.jpg "image")
 **Fig. 3 | Assessing the accuracy of host contamination removal across various software.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure4%20.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure4.jpg "image")
 
 **Fig. 4 | Impact of lacking a host reference genome on the performance of host decontamination tools.**
 
