@@ -43,10 +43,10 @@ The paper contains the following figures, and these scripts contain codes of all
 **Fig. S4 | Time consumption during the host removing process of BWA, Bowtie2, KneadData, KMCP, Kraken2, KrakenUniq. SinBac, Single bacterium; SynCom, Synthetic community.**
 
 ![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS5.jpg "image")
-**Fig. S5 | Comparative analysis of composition, computational efficiency and host contamination removal performance across six software. **
+**Fig. S5 | Comparative analysis of composition, computational efficiency and host contamination removal performance across six software.**
 
 ![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/FigureS6.jpg "image")
-**Fig. S6 | Assessing the performance of six tools at the genus level. **
+**Fig. S6 | Assessing the performance of six tools at the genus level.**
 
 ## Figure code
 
