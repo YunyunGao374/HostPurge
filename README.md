@@ -16,17 +16,17 @@ The paper contains the following figures, and these scripts contain codes of all
 
 **Graphical abstract | Benchmarking metagenomics tools for removing host contamination. **
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure1-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure1.jpg "image")
 
 **Fig. 1 | Host contamination consumed extra computing resources and affected the accuracy of the results in metagenomic analysis.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure2-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure2.jpg "image")
 **Fig. 2 | Benchmarking calculates resources of six host removal software on simulated human and rice metagenomic data.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure3%20-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure3%20.jpg "image")
 **Fig. 3 | Assessing the accuracy of host contamination removal across various software.**
 
-![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure4%20-F.jpg "image")
+![image](https://github.com/YunyunGao374/HostPurge/blob/main/MSFigure/Figure4%20.jpg "image")
 
 **Fig. 4 | Impact of lacking a host reference genome on the performance of host decontamination tools.**
 
